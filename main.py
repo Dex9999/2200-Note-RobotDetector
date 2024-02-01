@@ -32,6 +32,6 @@ model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_
 
 model.evaluate(val_data)
 
-model.export(export_dir='.', tflite_filename='notedetector.tflite')
+model.export(export_dir='.', tflite_filename='noterobotdetector.tflite')
 
-model.evaluate_tflite('notedetector.tflite', val_data)
+model.evaluate_tflite('noterobotdetector.tflite', val_data)
