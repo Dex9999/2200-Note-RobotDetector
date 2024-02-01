@@ -15,15 +15,15 @@ from absl import logging
 logging.set_verbosity(logging.ERROR)
 
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'frc2024-disc-1/train',
-    'frc2024-disc-1/train',
-    ['note']
+    'Notes-+-Bobots-1/train',
+    'Notes-+-Bobots-1/train',
+    ['bluebot', 'note', 'redbot']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'frc2024-disc-1/valid',
-    'frc2024-disc-1/valid',
-    ['note']
+    'Notes-+-Bobots-1/valid',
+    'Notes-+-Bobots-1/valid',
+    ['bluebot', 'note', 'redbot']
 )
 
 spec = model_spec.get('efficientdet_lite0')
