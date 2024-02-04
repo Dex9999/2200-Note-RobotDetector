@@ -15,14 +15,14 @@ from absl import logging
 logging.set_verbosity(logging.ERROR)
 
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'Notes-+-Bobots-1/train',
-    'Notes-+-Bobots-1/train',
+    'Notes-+-Bobots-2/train',
+    'Notes-+-Bobots-2/train',
     ['bluebot', 'note', 'redbot']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'Notes-+-Bobots-1/valid',
-    'Notes-+-Bobots-1/valid',
+    'Notes-+-Bobots-2/valid',
+    'Notes-+-Bobots-2/valid',
     ['bluebot', 'note', 'redbot']
 )
 
@@ -35,3 +35,5 @@ model.evaluate(val_data)
 model.export(export_dir='.', tflite_filename='noterobotdetector.tflite')
 
 model.evaluate_tflite('noterobotdetector.tflite', val_data)
+from google.colab import files
+files.download("noterobotdetector.tflite")
